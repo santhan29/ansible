@@ -4,7 +4,7 @@
   vars:
     course: "devops with aws"  #string
     duration: 120   #number
-    topics: 
+    topics:  #list
     - linux
     - shell
     - ansible
