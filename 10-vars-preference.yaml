@@ -2,8 +2,8 @@
   hosts: web
   vars:
     course: "devops with aws play level"
-  vars_files:
-  - vars.yaml
+  # vars_files:
+  # - vars.yaml
   vars_prompt:
    - name: course
      prompt: please enter the course name
