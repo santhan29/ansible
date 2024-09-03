@@ -1,0 +1,19 @@
+- name: variables to print 
+  hosts: web
+  vars:
+    course: "devops with aws play level"
+  vars_files:
+  - vars.yaml
+  vars_prompt:
+   - name: course
+     prompt: please enter the course name
+     private: false
+  tasks:
+  - name: print the info 
+    vars:
+      course: "devops with aws task level"
+    ansible.builtin.debug:
+      msg: " i am learning {{course}}"
+
+
+    
