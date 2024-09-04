@@ -3,10 +3,23 @@
   tasks: 
   - name: print the varialble 
     ansible.builtin.debug:
-      msg: "hello {{ course | default('ansible') | upper }}"
+      msg: "hello {{ course | default('ansible') }}"
   
-  - name: convert to upper case 
+  - name: convert to lower case 
     vars: 
       greeting: "hello RAMESH"
     ansible.builtin.debug:
       msg: " {{ greeting | lower }} "
+
+  - name: convert to upper case 
+    vars: 
+      greeting: "hello RAMESH"
+    ansible.builtin.debug:
+      msg: " {{ greeting | upper }} "
+
+  - name: get the unique values
+    vars:
+      numbers: [1,2,3,4,6,4,6,7,8,2,3]
+    ansible.builtin.debug:
+      msg: "{{ numbers | unique }}"
+
