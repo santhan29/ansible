@@ -51,4 +51,4 @@
     vars: 
       myip: "172.31.43.85"
     ansible.builtin.debug:
-      msg: "{{ myip | ansible.utils.ipvd }}"
+      msg: "{{ myip | ansible.utils.ipv4 }}"
