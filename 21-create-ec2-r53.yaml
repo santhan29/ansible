@@ -1,6 +1,6 @@
 - name: creating ec2 instance and route53 records 
   hosts: local
-  connections: local
+  connection: local
   vars:
     #ansible_python_interpreter: /usr/bin/python3
     subnet_id: subnet-09c8781603faed3eb
