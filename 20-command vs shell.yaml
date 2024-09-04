@@ -1,5 +1,6 @@
 - name: command vd shell 
-  hosts: web 
+  hosts: local
+  connection: local
   tasks: 
   - name: execute the command 
     ansible.builtin.command: ls -ltr > /tmp/output.txt 
