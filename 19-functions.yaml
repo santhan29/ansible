@@ -3,10 +3,10 @@
   tasks: 
   - name: print the varialble 
     ansible.builtin.debug:
-      msg: "hello {{ course | default('ansible') }}"
+      msg: "hello {{ course | default('ansible') | upper }}"
   
   - name: convert to upper case 
     vars: 
       greeting: "hello RAMESH"
     ansible.builtin.debug:
-      msg: " {{ greeting | upper }} "
+      msg: " {{ greeting | lower }} "
