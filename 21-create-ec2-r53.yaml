@@ -1,10 +1,11 @@
 - name: creating ec2 instance and route53 records 
-  hosts: web 
+  hosts: local
+  connections: local
   vars:
-    ansible_python_interpreter: /usr/bin/python3
+    #ansible_python_interpreter: /usr/bin/python3
     subnet_id: subnet-09c8781603faed3eb
-    sg_id: sg-05fc1502c847bef0a
-    ami_id: ami-09c813fb71547fc4f
+    sg_id: "sg-05fc1502c847bef0a"
+    ami_id: "ami-09c813fb71547fc4f"
     instances:
     - mysql
     - backend
@@ -12,7 +13,7 @@
   tasks: 
   - name: create ec2 instance
     amazon.aws.ec2_instance:
-      name: 
+      name: "{{ item }}"
       vpc_subnet_id: "{{ subnet_id }}"
       instance_type: t3.micro
       security_group: "{{ sg_id }}"
