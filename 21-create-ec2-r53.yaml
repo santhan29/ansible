@@ -30,7 +30,7 @@
   - name: create r53 records
     amazon.aws.route53:
       state: present
-      zone: "{{ aws81s.store }}"
+      zone: "{{ zone }}"
       record: "{{ item.item }}.{{ zone }}"
       type: A
       ttl: 1
