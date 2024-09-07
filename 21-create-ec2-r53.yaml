@@ -12,6 +12,12 @@
     - frontend
     zone: aws81s.store
   tasks: 
+  - name: installing boto3 and botocore
+    ansible.builtin.pip:
+      name:
+      - boto3
+      - botocore
+      executable: pip3.9
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       name: "{{ item }}"
